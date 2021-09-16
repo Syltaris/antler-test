@@ -4,9 +4,8 @@ export const dependencies = {
 const sendTweetSpark = async (data) => {  
     const { status, createdBy } = data; // extension sparkBody
 
-    // Retrieve the user's twitter Bearer Token
+    // Retrieve the user's twitter Bearer Token and Secret w/ r+w perms
     // assume user has registered twitter account to Antler through Oauth
-    // Problem: how to get user's twitter token?
     const utilFns = require("../utils");
     const {twitterOauthToken, twitterOauthSecret} = await utilFns.getSecret("twitterSecrets");
     const twitterOauth = await utilFns.getApplicationTwitterOauth()
